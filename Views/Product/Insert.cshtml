@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Insert";
+}
+
+<table>
+    @using (Html.BeginForm("Insert", "Product", FormMethod.Post))
+    {
+    <tr>
+        <td>Title</td>
+        <td><input type="text" id="Title" name="Title" /></td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td> <input type="text" id="Quantity" name="Quantity" /></td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td><input type="text" id="Price" name="Price" /></td>
+    </tr>
+    <tr>
+        <td>Image</td>
+        <td> <input type="file" id="Image" name="Image" /></td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td><input type="text" id="Description" name="Description" /></td>
+    </tr>
+    <tr>
+        <td>Category_Id</td>
+        <td><input type="text" id="Category_Id" name="Category_Id" /></td>
+    </tr>
+    <tr>
+        <td><button type="submit">Submit</button></td>
+    </tr>
+    }
+</table>
+

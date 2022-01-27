@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+    {
+        <tr>
+            <td><b>Username</b></td>
+            <td><input type="text" placeholder="Enter Username" name="Email" id="Email" required></td>
+        </tr>
+        <tr>
+            <td><b>Password</b></td>
+            <td><input type="password" placeholder="Enter Password" name="Password" id="Password" required></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Login</button></td>
+        </tr>
+    }
+        <tr>
+            <td>
+                <a href="/Signup">Signup Here</a>
+            </td>
+        </tr>
+    
+    </table>

@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@if (ViewBag.msg == "Pleae enter correct OTP.") 
+{
+<div class="alert alert-success">
+    <strong>Success!</strong> Pleae enter correct OTP.
+</div>
+}
+
+
+<table>
+    @using (Html.BeginForm("Signup", "Signup", FormMethod.Post))
+    {
+        <tr>
+            <td>First Name</td>
+            <td> <input type="text" placeholder="Enter FirstName" name="FirstName" id="FirstName" required></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input type="text" placeholder="Enter LastName" name="Lastname" id="Lastname" required></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td> <input type="text" placeholder="Enter Email" name="Email" id="Email" required></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" placeholder="Enter Password" name="Password" id="Password" required></td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td><input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required></td>
+        </tr>
+        <tr style="display:none" id="enterotp">
+            <td>Enter otp:</td>
+            <td><input type="text" id="OTP" name="OTP"  required /></td>
+        </tr>
+        <tr>
+            <td><button type="submit" id="Signup" style="display:none">Signup</button></td>
+
+        </tr>
+
+    }
+    <tr>
+        <td><input type="button" id="Getotp" onclick="myFunction()" value="submit" /></td>
+    </tr>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function myFunction() {
+
+        alert("otp sent to  your email")
+        var Email = $("#Email").val();
+        $.ajax({
+            url: "Signup/Sendotp",
+            type: "POST",
+            data: {Email:Email},
+           dataType: "json",
+            success: function (data) {
+
+                $("#enterotp").show();
+            $("#Signup").show();
+            $("#Getotp").hide();
+        },
+            });
+    }
+   
+
+    
+
+
+</script>
+

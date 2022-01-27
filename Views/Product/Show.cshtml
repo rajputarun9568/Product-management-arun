@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+@model IEnumerable<Product_management_arun.Models.Product>
+<h1>All Product</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Category_id</th>
+       
+    </tr>
+    
+        @foreach (var pro in Model)
+        {
+<tr>
+    <td>@pro.Title</td>
+    <td>@pro.Quantity</td>
+    <td>@pro.Price</td>
+    <td>@pro.Description</td>
+    <td>@pro.Category_id</td>
+
+</tr>
+    }
+
+</table>
+
