@@ -40,7 +40,7 @@ namespace Product_management_arun.Controllers
 
             using (DatabaseContext db = new DatabaseContext())
                 {
-                    var res = db.Database.ExecuteSqlCommand("sp_Signup @Firstname,@Lastname,@Password,@Email,@otp",
+                      var res = db.Database.ExecuteSqlCommand("sp_Signup @Firstname,@Lastname,@Password,@Email,@otp",
                       new SqlParameter("@Firstname", FirstName),
                       new SqlParameter("@Lastname", Lastname),
                       new SqlParameter("@Password", Password),
